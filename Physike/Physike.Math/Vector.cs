@@ -6,7 +6,7 @@ using Util = System.Math;
 namespace Physike.Math
 {
     /// <summary>
-    /// A structure encapsulating a three-dimensional vector.
+    /// A structure encapsulating a three-dimensional Cartesian vector.
     /// </summary>
     [Serializable]
     public struct Vector : IEquatable<Vector>, IFormattable
@@ -276,7 +276,7 @@ namespace Physike.Math
         {
             return (obj is Vector) && // if obj is a vector and
                 Equals((Vector)obj); // the vectors are equal true is returned
-            // this calls the public bool Equals(Vector3 other) method implimented through IFormattable, located in the Inheritance Methods region
+            // this calls the public bool Equals(Vector other) method implimented through IFormattable, located in the Inheritance Methods region
         }
 
         /// <summary>
@@ -307,7 +307,7 @@ namespace Physike.Math
         {
             return X == other.X && // if instance x == other x and
                    Y == other.Y && // if instance y == other y and
-                   Z == other.Z; // if instanc z == other z the vectors are equal and true is returned. Else false is returned
+                   Z == other.Z; // if instance z == other z the vectors are equal and true is returned. Else false is returned.
         }
 
         /// <summary>
