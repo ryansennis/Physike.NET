@@ -11,12 +11,7 @@ namespace Physike
     public class Particle : IEquatable<Particle>, IFormattable
     {
         #region Public Fields
-
-        /// <summary>
-        /// The <see cref="string"/> name of the particle.
-        /// </summary>
-        public string Name { get; }
-
+        
         /// <summary>
         /// The <see cref="Vector"/> position of the particle in Cartestian space.
         /// </summary>
@@ -44,14 +39,12 @@ namespace Physike
         /// <summary>
         /// Constructs a <see cref="Particle"/> with the given parameters.
         /// </summary>
-        /// <param name="name">The name.</param>
         /// <param name="position">The initial position.</param>
         /// <param name="velocity">The initial velocity.</param>
         /// <param name="mass">The mass.</param>
         /// <param name="charge">The charge</param>
-        public Particle(string name, Vector position, Vector velocity, double mass, double charge)
+        public Particle(Vector position, Vector velocity, double mass, double charge)
         {
-            Name = name;
             Position = position;
             Velocity = velocity;
             Mass = mass;
@@ -100,11 +93,7 @@ namespace Physike
         /// <returns><see cref="true"/> if the instances are equal; <see cref="false"/> otherwise.</returns>
         public bool Equals(Particle other)
         {
-            return Name == other.Name && // if instance position == other position and
-                   Position == other.Position && // if instance mass == other mass and
-                   Velocity == other.Velocity && // if instance velocity == other velocity and
-                   Mass == other.Mass && // instance name == other name and
-                   Charge == other.Charge; // instance charge == other charge the particles are the same particle and true is returned. Else returns false.
+            return Position == other.Position; // if instance position == other position and the particles are the same particle and true is returned. Else returns false.
         }
 
         /// <summary>
@@ -120,9 +109,6 @@ namespace Physike
             string seperator = NumberFormatInfo.GetInstance(formatProvider).NumberGroupSeparator;
             sb.Append("Particle: ");
             sb.Append('(');
-            sb.Append($"Name = {Name}");
-            sb.Append(seperator);
-            sb.Append(' ');
             sb.Append($"r = {Position.ToString(format, formatProvider)}");
             sb.Append(seperator);
             sb.Append(' ');

@@ -7,7 +7,7 @@ namespace Physike.Math
     /// <summary>
     /// A structure encapsulating a scalar field in three-dimensional Cartesian space.
     /// </summary>
-    public struct ScalarField
+    public struct ScalarField //: IEquatable<ScalarField>, IFormattable 
     {
         #region Public Fields
 
@@ -41,12 +41,6 @@ namespace Physike.Math
             DeltaX = DeltaY = DeltaZ = delta;
             Points = new List<double> { };
         }
-
-        #endregion
-
-        #region Private Methods
-
-
 
         #endregion
     }
